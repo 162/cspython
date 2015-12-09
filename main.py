@@ -36,11 +36,11 @@ def main(sems):
     except IndexError():
         pass
     for i in range(sems):
-        txt = 'name\t' + '\t'.join([str(x) for x in task_ids[i]])
+        txt = 'name\t' + '\t'.join([str(x) for x in task_ids[i]])+'\n'
         for student in students:
             l1, l2 = student.get_sem_stats(i)
-            txt += l1+'\t'+l2
-        f = open('students/'+str(i)+'.txt', 'w')
+            txt += l1+'\t'+l2+'\n'
+        f = open('results/'+str(i)+'.txt', 'w')
         f.write(txt)
         f.close()
 
