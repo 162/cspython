@@ -51,11 +51,11 @@ def parse_res(adress):
     return out
 
 
-def parse_id(id):
+def parse_id(id, retries=5):
     i = 0
     adress = 'http://informatics.mccme.ru/mod/statements/view3.php?chapterid='+str(id)+'&standing'
     out = []
-    while not out and i < 10:
+    while not out and i < retries:
         out = parse_res(adress)
         i += 1
     print len(out), 'results read'

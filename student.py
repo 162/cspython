@@ -9,7 +9,7 @@ class Student():
         if result.name == self.name:
             self.total_penalty += result.penalty
             self.total_points += int(result.solved)
-            self.tasks[n_sem][n_task] = 1
+            self.tasks[n_sem][n_task] = int(result.solved)
 
     def get_sem_stats(self, n_sem):
         to_print = "\t".join([str(i) for i in self.tasks[n_sem]])
@@ -25,4 +25,4 @@ class Student():
             sems.append(b)
         sems.append(str(self.total_points))
         sems.append(str(self.total_penalty))
-        return "\t".join(sems)
+        return self.name+'\t'+"\t".join(sems)

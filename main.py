@@ -43,6 +43,12 @@ def main(sems):
         f = open('results/'+str(i)+'.txt', 'w')
         f.write(txt)
         f.close()
+    txt = 'name\t' + '\t'.join([str(x) for x in range(sems)])+'\ttotal\n'
+    for student in students:
+        txt += student.get_total_stats()+'\n'
+    f = open('results/total.txt', 'w')
+    f.write(txt)
+    f.close()
 
 
-main(6)
+main(7)
